@@ -11,11 +11,9 @@
 # либо open(file_name, encoding='windows-1251') соответственно. Сделайте read и удостоверьтесь,
 # что содержимое файлов полностью совпадает.
 
-with open('Onegin_utf8.txt', 'r', encoding='utf-8') as utf:
+with open('Onegin_utf8.txt', 'r', encoding='utf-8') as utf, \
+     open('Onegin_windows1251.txt', 'r', encoding='windows-1251') as windows:
     content_utf = utf.read()
-
-
-with open('Onegin_windows1251.txt', 'r', encoding='windows-1251') as windows:
     content_windows = windows.read()
 
 if content_windows == content_utf:
